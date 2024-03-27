@@ -19,15 +19,25 @@ import t2 from '../images/team-2.jpg';
 import t3 from '../images/team-3.jpg';
 import t4 from '../images/team-4.jpg';
 
+import 'animate.css';
+import 'wowjs/css/libs/animate.css';
+import WOW from 'wowjs';
+
+
 
 import '../styles/Home.css';
-import '../styles/animate.css';
+// import '../styles/animate.css';
 
 import imagesLoaded from 'imagesloaded';
 import Isotope from 'isotope-layout';
 
 function Home(){
     const [activeFilter, setActiveFilter] = useState('*'); 
+
+    useEffect(() => {
+        const wow = new WOW.WOW();
+        wow.init();
+      }, []);
   
     useEffect(() => {
         imagesLoaded('#container', function () {
@@ -55,136 +65,124 @@ function Home(){
     }, [activeFilter]);
     return (
         <div className='container-fluid'>
+
             <header>
-                <nav className="navbar navbar-expand-lg">
-                
-                    <a className="navbar-brand" href="javascript:void(0)">
-                        <img className="logo" src={Logo} alt="logo"/>
-                    </a>
+                <nav className="navbar navbar-expand-md navbar-light bg-white fixed-top">
+                    <div className="container-fluid">
+                        <a className="navbar-brand" href="#">
+                            <img className="logo" src={Logo} alt="logo"/>
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
 
-                    <div className="collapse navbar-collapse d-flex justify-content-end">
-                        <ul className="navbar-nav">
-                            <li className="nav-item dropdown me-4">
-                                <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
-                                <ul className="dropdown-menu">
+                        <div className="navbar-collapse collapse show justify-content-end bg-white " id="navbarCollapse">
+                                <ul className="navbar-nav">
+                                    <li className="nav-item dropdown me-4">
+                                        <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                                        <ul className="dropdown-menu">
 
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Home 1</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Home 2</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Home 3</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Home 1</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Home 2</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Home 3</a></li>
 
-                                </ul>
-                            </li>
+                                        </ul>
+                                    </li>
 
-                            <li class="nav-item me-4">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
+                                    <li class="nav-item me-4">
+                                        <a class="nav-link" href="#">About</a>
+                                    </li>
 
-                            <li className="nav-item dropdown me-4">
-                                <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
-                                <ul className="dropdown-menu">
+                                    <li className="nav-item dropdown me-4">
+                                        <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Service</a>
+                                        <ul className="dropdown-menu">
 
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Service 1</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Service 2</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Service 3</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Service 1</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Service 2</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Service 3</a></li>
 
-                                </ul>
-                            </li>
+                                        </ul>
+                                    </li>
 
-                            <li className="nav-item dropdown me-4">
-                                <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-                                <ul className="dropdown-menu">
+                                    <li className="nav-item dropdown me-4">
+                                        <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                                        <ul className="dropdown-menu">
 
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Pages 1</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Pages 2</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Pages 3</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Pages 4</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Pages 1</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Pages 2</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Pages 3</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Pages 4</a></li>
 
-                                </ul>
-                            </li>
+                                        </ul>
+                                    </li>
 
-                            <li className="nav-item dropdown me-4">
-                                <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-                                <ul className="dropdown-menu">
+                                    <li className="nav-item dropdown me-4">
+                                        <a className="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                                        <ul className="dropdown-menu">
 
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Blog 1</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Blog 2</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Blog 3</a></li>
-                                    <li><a className="dropdown-item" href="javascript:void(0)">Blog 4</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Blog 1</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Blog 2</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Blog 3</a></li>
+                                            <li><a className="dropdown-item" href="javascript:void(0)">Blog 4</a></li>
 
-                                </ul>
-                            </li>
+                                        </ul>
+                                    </li>
 
-                            <li class="nav-item me-4">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
+                                    <li class="nav-item me-4">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
 
-                            <form action="#" className="search-form me-4">
-                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-                                <button type="submit"><i class="lni lni-search-alt search-button"></i></button>
-                            </form>
-                    
-                        </ul>
-
-                    </div>
-        
-                </nav>
-                
-            </header>
-
-            <section className='ms-4'> 
-                <div className="row align-items-center">
-                    <div className="col-xl-5 col-lg-6">
-                        <div className="hero-content-wrapper">
-                            <h2 className="mb-2 wow fadeInDown" data-wow-delay=".2s">AI Solution</h2>
-                            <h1 className="mb-2 wow fadeInDown" data-wow-delay=".2s">Multipurpose Software Developments</h1>
-                            <p className="mb-3 wow fadeInLeft" data-wow-delay=".4s">Artificially intelligent tools for naturally creative humans.</p>
-                            <a className="theme-button" href="javascript:void(0)">Get Started</a>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-7 col-lg-6">
-                    
-                        <div className="d-inline-flex align-items-center">
-                            <div className="video-btn me-5">
-                                <a href="javascript:void(0)" className=""><i class="lni lni-play"></i></a>
-                            </div>
-                            <div className='row'>
-                                <div className='col'>
-                                    <img src={Mona} alt="" className="wow fadeInRight Mona-image rounded me-2" data-wow-delay=".5s"/>
-                                    <img src={flowVincent} alt="" className="wow fadeInRight flowVincent-image rounded" data-wow-delay=".5s"/>
-                                </div>
+                                    <form action="#" className="search-form me-4">
+                                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+                                        <button type="submit"><i class="lni lni-search-alt search-button"></i></button>
+                                    </form>
                             
-                            </div>
+                                </ul>
 
                         </div>
-                    
+                        
+                    </div>
+                </nav>
+            </header>
+        
+
+            <section className='mt-5 pt-5'> 
+                <div className='container-fluid'>
+                    <div className="row align-items-center mt-5">
+                        <div className="col-xl-5 col-sm-12 mt-5 my-3">
+                            <div className="hero-content-wrapper">
+                                <h2 className="mb-2 wow fadeInDown" data-wow-delay=".2s">AI Solution</h2>
+                                <h1 className="mb-2 wow fadeInDown" data-wow-delay=".2s">Multipurpose Software Developments</h1>
+                                <p className="mb-3 wow fadeInLeft" data-wow-delay=".4s">Artificially intelligent tools for naturally creative humans.</p>
+                                <a className="theme-button" href="javascript:void(0)">Get Started</a>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7 col-sm-12">
+                        
+                            <div className="d-flex align-items-center justify-content-center">
+                                <div className="video-btn me-5">
+                                    <a href="javascript:void(0)" className=""><i class="lni lni-play"></i></a>
+                                </div>
+                                <div className='row'>
+                                    <div className='col'>
+                                        <img src={Mona} alt="" className="img-fluid wow fadeInRight Mona-image rounded me-2" data-wow-delay=".5s"/>
+                                        <img src={flowVincent} alt="" className="img-fluid wow fadeInRight flowVincent-image rounded" data-wow-delay=".5s"/>
+                                    </div>
+                                
+                                </div>
+
+                            </div>
+                        
+                        </div>
+
                     </div>
 
                 </div>
+              
 
             </section>
 
-            {/* <section class="client-logo-section mt-5">
-                    <div class="client-logo-wrapper">
-                        <div class="client-logo-carousel d-flex align-items-center justify-content-between">
-                            <div class="client-logo">
-                                <img src={Google} alt=""/>
-                            </div>
-                            <div class="client-logo">
-                                <img src={Facebook} alt=""/>
-                            </div>
-                            <div class="client-logo">
-                                <img src={Amazon} alt=""/>
-                            </div>
-                            <div class="client-logo">
-                                <img src={Morgan} alt=""/>
-                            </div>
-                            <div class="client-logo">
-                                <img src={Goldman} alt=""/>
-                            </div>
-                        </div>
-                    </div>
-            </section> */}
 
             <section className="feature-section mt-5">
                 <div className="container">
@@ -198,9 +196,9 @@ function Home(){
                         </div>
                     </div>
 
-                    <div className='row'>
+                    <div className='row row-cols-1 row-cols-md-3'>
                         <div className='col'>
-                            <div className="card shadow-sm">
+                            <div className="card shadow-sm h-100">
                               
                                 <div className="card-body">
                                     <div className="feature-icon box-icon-style">
@@ -214,7 +212,7 @@ function Home(){
                         </div>
 
                         <div className='col'>
-                            <div className="card shadow-sm">
+                            <div className="card shadow-sm h-100">
                               
                                 <div className="card-body">
                                     <div className="feature-icon box-icon-style">
@@ -229,7 +227,7 @@ function Home(){
 
 
                         <div className='col'>
-                            <div className="card shadow-sm">
+                            <div className="card shadow-sm h-100">
                               
                                 <div className="card-body">
                                     <div className="feature-icon box-icon-style">
@@ -365,50 +363,53 @@ function Home(){
             </section>
 
             <section className='mt-5'>
-                <div className="row">
-                    <div className="col-xl-5 col-lg-7 mx-auto">
-                        <div className="section-title text-center mb-60">
-                            <span className="wow fadeInDown" data-wow-delay=".2s">Team</span>
-                            <h2 className="wow fadeInUp" data-wow-delay=".4s">Meet Our Expert</h2>
-                            <p className="wow fadeInUp" data-wow-delay=".6s">Intelligent members are always there to help create products</p>
+                <div className='container px-0'>
+                    <div className="row">
+                            <div className="col-xl-5 col-lg-7 mx-auto">
+                                <div className="section-title text-center mb-60">
+                                    <span className="wow fadeInDown" data-wow-delay=".2s">Team</span>
+                                    <h2 className="wow fadeInUp" data-wow-delay=".4s">Meet Our Expert</h2>
+                                    <p className="wow fadeInUp" data-wow-delay=".6s">Intelligent members are always there to help create products</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div className='team-members d-flex justify-content-between my-5'>
+                    
+                        <div className="card">
+                            <img src={t1} className="card-img-top" alt="..."/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Machine Learning Engineer</p>
+                            </div>
                         </div>
+                
+                        <div className="card">
+                            <img src={t2} className="card-img-top" alt="..."/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Web Designer</p>
+                            </div>
+                        </div>
+                
+                        <div className="card">
+                            <img src={t3} className="card-img-top" alt="..."/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Quantitative Analyst</p>
+                            </div>
+                        </div>
+                    
+                        <div className="card">
+                            <img src={t4} className="card-img-top" alt="..."/>
+                            <div className="card-body">
+                                <h5 className="card-title">Card title</h5>
+                                <p className="card-text">Software Engineer</p>
+                            </div>
+                        </div>
+                    
                     </div>
                 </div>
-                <div className='team-members d-flex justify-content-between mx-5 my-5'>
-                
-                    <div className="card">
-                        <img src={t1} className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Machine Learning Engineer</p>
-                        </div>
-                    </div>
-            
-                    <div className="card">
-                        <img src={t2} className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Web Designer</p>
-                        </div>
-                    </div>
-            
-                    <div className="card">
-                        <img src={t3} className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Quantitative Analyst</p>
-                        </div>
-                    </div>
-                
-                    <div className="card">
-                        <img src={t4} className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">Card title</h5>
-                            <p className="card-text">Software Engineer</p>
-                        </div>
-                    </div>
-                
-                </div>
+               
             </section>
 
             <section className="subscribe-section">
@@ -504,8 +505,7 @@ function Home(){
                 
             </section>
 
-       
-
+    
         </div>
        
     )
